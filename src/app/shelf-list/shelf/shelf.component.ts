@@ -21,12 +21,13 @@ export class ShelfComponent implements OnInit {
 
     finalPrice = BRPrice.replace(/R\$/, '<span>R$</span>').replace(/\,.+/, (s)=> `<span>${s}</span>`);
 
-    console.log(finalPrice)
-
+    return finalPrice;
   }
 
-  getInstallmentValue() {
-    return this.productInfo.price / this.productInfo.installments;
+  getInstallments(price) {
+    let eachPrice = this.getPriceFormated(price);
+
+    return `ou em ${this.productInfo.installments}x de ${eachPrice}`;
   }
 
 }

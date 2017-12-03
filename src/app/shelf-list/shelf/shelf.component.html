@@ -1,12 +1,22 @@
 <div class="shelf">
+
   <figure class="shelf__picture">
     <img src="/assets/images/product-image-{{productInfo.id}}.jpg" alt="{{productInfo.title}}">
     <figcaption>
       <p>{{productInfo.title}}{{ " - " + productInfo.style }}</p>
     </figcaption>
   </figure>
+
   <div class="shelf__price">
-    <p class="shelf__price--full">{{ getPriceFormated( productInfo.price | currency:'BRL' ) }}</p>
-    <p *ngIf="productInfo.installment" class="shelf__price--installment">R$</p>
+
+    <p
+    class="shelf__price--full"
+    [innerHTML]="getPriceFormated( productInfo.price | currency: productInfo.currencyId )"></p>
+
+    <p
+    *ngIf="productInfo.installments"
+    class="shelf__price--installment"
+    [innerHTML]="getInstallments( productInfo.price / productInfo.installments | currency: productInfo.currencyId)"></p>
+
   </div>
 </div>

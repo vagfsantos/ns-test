@@ -1,5 +1,6 @@
 import { CurrencyPipe } from '@angular/common';
 import { Component, OnInit, Input} from '@angular/core';
+import { CustomPriceService } from '../../custom-price.service';
 
 @Component({
   selector: 'app-shelf',
@@ -9,25 +10,17 @@ import { Component, OnInit, Input} from '@angular/core';
 export class ShelfComponent implements OnInit {
   @Input() productInfo: any;
 
-  constructor() { }
+  constructor(private customPriceService: CustomPriceService) { }
 
   ngOnInit() {
 
   }
 
   getPriceFormated(price) {
-    let finalPrice;
-    let BRPrice = price.replace(/\,/gim, '#').replace(/\./gim, ',').replace(/\#/gim, '.');
-
-    finalPrice = BRPrice.replace(/R\$/, '<span>R$</span>').replace(/\,.+/, (s)=> `<span>${s}</span>`);
-
-    return finalPrice;
+    return this.customPriceService.getPriceFormated(price);
   }
 
   getInstallments(price) {
-    let eachPrice = this.getPriceFormated(price);
-
-    return `ou em ${this.productInfo.installments}x de ${eachPrice}`;
+    return this.customPriceService.getInstallments(price, this.productInfo.installments);
   }
-
 }

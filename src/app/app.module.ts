@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ShelfListModule } from './shelf-list/shelf-list.module';
+import { CustomPriceService } from './custom-price.service';
 
 
 @NgModule({
@@ -14,7 +15,9 @@ import { ShelfListModule } from './shelf-list/shelf-list.module';
     BrowserModule,
     ShelfListModule
   ],
-  providers: [],
+  providers: [
+    CustomPriceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

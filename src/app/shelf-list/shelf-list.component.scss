@@ -1,6 +1,11 @@
 .shelf-list{
 
   &__products{
+    &:after{
+      content:'';
+      display: table;
+      clear: both;
+    }
     > div{
       width: 33%;
       float: left;

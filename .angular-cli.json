@@ -19,6 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "./../node_modules/initialize-css/dist/_initialize.scss",
         "styles.scss"
       ],
       "scripts": [],

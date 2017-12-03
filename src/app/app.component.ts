@@ -8,8 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   productsInCart = [];
+  totalPrice: number = 0;
 
   addProductToCart(product) {
     this.productsInCart.push(product);
+    this.calcTotalPrice();
+  }
+
+  calcTotalPrice(){
+    this.totalPrice = this.productsInCart.reduce( (prev, prod) => {
+      return prev += prod.product.price * prod.quantity;
+    }, 0);
   }
 }

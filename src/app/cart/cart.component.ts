@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
+import { CustomPriceService } from '../custom-price.service';
 
 @Component({
   selector: 'app-cart',
@@ -7,10 +8,22 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CartComponent implements OnInit {
   @Input() productsInCart;
+  @Input() totalPrice: number;
+  private installmentTimes: number = 10;
 
-  constructor() { }
+  constructor(private customPriceService:CustomPriceService) {
 
-  ngOnInit() {
   }
 
+  ngOnInit() {
+
+  }
+
+  getPriceFormated(price) {
+    return this.customPriceService.getPriceFormated(price);
+  }
+
+  getInstallments(price) {
+    return this.customPriceService.getInstallments(price, this.installmentTimes);
+  }
 }

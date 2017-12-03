@@ -9,8 +9,15 @@
     <div class="cart__subtotal">
       <p>Subtotal</p>
       <div>
-        <p class="cart__total">{{ 'a' }}</p>
-        <p class="cart__total--installments">{{ 'a' }}</p>
+
+        <p
+        class="cart__total"
+        [innerHTML]="getPriceFormated( totalPrice | currency: 'BRL' )"></p>
+
+        <p
+        class="cart__total--installments"
+        [innerHTML]="getInstallments( totalPrice / installmentTimes | currency: 'BRL' )"></p>
+
       </div>
     </div>
   </footer>

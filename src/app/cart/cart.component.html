@@ -2,10 +2,17 @@
   <header>
     <p><span>{{ productsInCart.length }}</span>Sacola</p>
   </header>
-  <main *ngFor="let product of productsInCart">
-    <app-cart-product></app-cart-product>
+
+  <main>
+    <div *ngFor="let product of productsInCart">
+      <app-cart-product></app-cart-product>
+    </div>
+    <div *ngIf="!productsInCart.length">
+      <p class="cart__empty">Seu carrinho está vazio =(</p>
+    </div>
   </main>
-  <footer>
+
+  <footer *ngIf="productsInCart.length">
     <div class="cart__subtotal">
       <p>Subtotal</p>
       <div>

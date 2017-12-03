@@ -8,6 +8,12 @@
   background: #202025;
   color: #fff;
 
+  &__empty{
+    font-size: 1.8rem;
+    text-align: center;
+    color: #444444;
+  }
+
   header{
     text-align: center;
     text-transform: uppercase;

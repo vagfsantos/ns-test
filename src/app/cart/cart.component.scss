@@ -1,0 +1,46 @@
+.cart{
+  width: 85%;
+  height: 100%;
+  max-width: 515px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: #202025;
+  color: #fff;
+
+  header{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.5rem;
+
+    p{
+      transform: translateX(1rem)
+    }
+
+    span{
+      width: 16px;
+      height: 16px;
+      font-size: 0.8rem;
+      display: inline-block;
+      background: #dfbd00;
+      color: #000;
+      border-radius: 50%;
+      position: relative;
+      top: 8px;
+      margin-right: 1rem;
+
+      &:before{
+        content:'';
+        width: 33px;
+        height: 40px;
+        background-image: url('/assets/icons/bag.png');
+        display: block;
+        position: absolute;
+        left: -25px;
+        top: -28px;
+        z-index: -1;
+      }
+    }
+  }
+}

@@ -10,10 +10,6 @@ export class AppComponent {
   productsInCart = [];
 
   addProductToCart(product) {
-
-  }
-
-  add(product){
-    console.log(product);
+    this.productsInCart.push(product);
   }
 }

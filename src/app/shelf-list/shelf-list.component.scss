@@ -1,0 +1,13 @@
+.shelf-list{
+
+  &__products{
+    > div{
+      width: 33%;
+      float: left;
+
+      &:nth-child(3n+4){
+        clear: both;
+      }
+    }
+  }
+}

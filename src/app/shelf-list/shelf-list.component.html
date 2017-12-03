@@ -7,7 +7,7 @@
 
   <div *ngIf="data.products.length" class="shelf-list__error">
     <div *ngFor="let product of data.products">
-
+        <app-shelf [productInfo]="product"></app-shelf>
     </div>
   </div>
 </div>

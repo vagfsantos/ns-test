@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductApiService } from '../product-api.service';
 
 @Component({
   selector: 'app-shelf-list',
@@ -12,16 +13,15 @@ export class ShelfListComponent implements OnInit {
 
   hasError: boolean = false;
 
-  constructor() { }
+  constructor(private productApiService: ProductApiService) { }
 
   ngOnInit() {
-    fetch('/public/data/products.json')
-      .then(res => res.json())
+    this.productApiService.getAll()
       .then(res => this.data = res)
       .catch( error => {
         console.log(error);
         this.hasError = true;
-      })
+      });
   }
 
 }

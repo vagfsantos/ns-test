@@ -1,3 +1,4 @@
+import { CurrencyPipe } from '@angular/common';
 import { Component, OnInit, Input} from '@angular/core';
 
 @Component({
@@ -11,6 +12,21 @@ export class ShelfComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  getPriceFormated(price) {
+    let finalPrice;
+    let BRPrice = price.replace(/\,/gim, '#').replace(/\./gim, ',').replace(/\#/gim, '.');
+
+    finalPrice = BRPrice.replace(/R\$/, '<span>R$</span>').replace(/\,.+/, (s)=> `<span>${s}</span>`);
+
+    console.log(finalPrice)
+
+  }
+
+  getInstallmentValue() {
+    return this.productInfo.price / this.productInfo.installments;
   }
 
 }

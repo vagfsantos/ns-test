@@ -6,7 +6,7 @@
     </figcaption>
   </figure>
   <div class="shelf__price">
-    <p class="shelf__price--full"> R$ {{productInfo.price}} </p>
-    <p class="shelf__price--installment">R$ {{ productInfo.installment ? productInfo.price / productInfo.installment : ''}}</p>
+    <p class="shelf__price--full">{{ getPriceFormated( productInfo.price | currency:'BRL' ) }}</p>
+    <p *ngIf="productInfo.installment" class="shelf__price--installment">R$</p>
   </div>
 </div>

@@ -23,5 +23,4 @@ export class ShelfListComponent implements OnInit {
         this.hasError = true;
       });
   }
-
 }

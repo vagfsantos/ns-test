@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { ShelfListComponent } from './shelf-list/shelf-list.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ShelfListComponent
   ],
   imports: [
     BrowserModule

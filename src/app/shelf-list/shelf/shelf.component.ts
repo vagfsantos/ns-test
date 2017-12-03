@@ -1,5 +1,5 @@
 import { CurrencyPipe } from '@angular/common';
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { CustomPriceService } from '../../custom-price.service';
 
 @Component({
@@ -9,6 +9,9 @@ import { CustomPriceService } from '../../custom-price.service';
 })
 export class ShelfComponent implements OnInit {
   @Input() productInfo: any;
+  @Output() onProductInCart = new EventEmitter();
+
+  private quantityInput: number = 1;
 
   constructor(private customPriceService: CustomPriceService) { }
 
@@ -22,5 +25,12 @@ export class ShelfComponent implements OnInit {
 
   getInstallments(price) {
     return this.customPriceService.getInstallments(price, this.productInfo.installments);
+  }
+
+  addProductToCart(e) {
+    this.onProductInCart.emit({
+      product: this.productInfo,
+      quantity: this.quantityInput
+    })
   }
 }

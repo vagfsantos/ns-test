@@ -1,6 +1,7 @@
 <div class="app">
   <div class="app__container">
-    <app-shelf-list></app-shelf-list>
+    <app-shelf-list (onProductInCart)="add($event)"></app-shelf-list>
+    <app-cart></app-cart>
   </div>
 </div>
 

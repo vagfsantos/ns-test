@@ -21,7 +21,7 @@
   </div>
 
   <div class="shelf__buy">
-    <input type="number" value="1" min="1">
-    <button type="button">adicionar à sacola</button>
+    <input type="number" min="1" [(ngModel)]="quantityInput">
+    <button type="button" (click)="addProductToCart($event)">adicionar à sacola</button>
   </div>
 </div>

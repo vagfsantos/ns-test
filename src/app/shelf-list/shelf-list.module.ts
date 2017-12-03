@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { ProductApiService } from '../product-api.service';
 
@@ -12,7 +13,8 @@ import { ShelfComponent } from './shelf/shelf.component';
     ShelfComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   providers: [
     ProductApiService

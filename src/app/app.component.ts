@@ -1,3 +1,4 @@
+import { element } from 'protractor';
 import { Component } from '@angular/core';
 
 @Component({
@@ -5,4 +6,14 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {}
+export class AppComponent {
+  productsInCart = [];
+
+  addProductToCart(product) {
+
+  }
+
+  add(product){
+    console.log(product);
+  }
+}

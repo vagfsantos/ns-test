@@ -6,16 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shelf-list.component.scss']
 })
 export class ShelfListComponent implements OnInit {
-  products: any;
+  data: any = {
+    products: []
+  };
+
+  hasError: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
     fetch('/public/data/products.json')
       .then(res => res.json())
-      .then(res => console.log(res))
+      .then(res => this.data = res)
       .catch( error => {
         console.log(error);
+        this.hasError = true;
       })
   }
 

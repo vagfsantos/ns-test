@@ -1,3 +1,13 @@
 <div class="shelf-list">
+  <!-- MESSAGE IN CASE OF ERROS -->
+  <div *ngIf="hasError" class="shelf-list__error">
+    <p>Opps! =(</p>
+    <p>Algo de errado aconteceu! Tente novamente mais tarde.</p>
+  </div>
 
+  <div *ngIf="data.products.length" class="shelf-list__error">
+    <div *ngFor="let product of data.products">
+
+    </div>
+  </div>
 </div>

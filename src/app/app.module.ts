@@ -2,22 +2,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import { ShelfListModule } from './shelf-list/shelf-list.module';
+import { CartModule } from './cart/cart.module';
 
 import { AppComponent } from './app.component';
-import { ShelfListModule } from './shelf-list/shelf-list.module';
 import { CustomPriceService } from './custom-price.service';
-import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CartComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     ShelfListModule,
-    FormsModule
+    CartModule
   ],
   providers: [
     CustomPriceService

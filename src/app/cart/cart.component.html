@@ -2,4 +2,16 @@
   <header>
     <p><span>{{ productsInCart.length }}</span>Sacola</p>
   </header>
+  <main *ngFor="let product of productsInCart">
+    <app-cart-product></app-cart-product>
+  </main>
+  <footer>
+    <div class="cart__subtotal">
+      <p>Subtotal</p>
+      <div>
+        <p class="cart__total">{{ 'a' }}</p>
+        <p class="cart__total--installments">{{ 'a' }}</p>
+      </div>
+    </div>
+  </footer>
 </div>

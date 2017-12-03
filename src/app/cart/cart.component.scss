@@ -44,4 +44,41 @@
       }
     }
   }
+
+  &__subtotal{
+    padding: 1rem;
+    text-transform: uppercase;
+
+    &:after{
+      content:'';
+      display: table;
+      clear: both;
+    }
+
+    p{
+      margin: 0;
+    }
+
+    > p{
+      float: left;
+      font-size: .9rem;
+      color: #797979;
+    }
+
+    > div{
+      float: right;
+      text-align: right;
+    }
+  }
+
+  &__total-price{
+    font-size: 1.5rem;
+    color: #dfbd00;
+    font-weight: 900;
+
+    &--installments{
+      font-size: 0.8rem;
+      color: #444444;
+    }
+  }
 }

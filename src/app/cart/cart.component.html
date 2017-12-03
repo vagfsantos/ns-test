@@ -11,11 +11,11 @@
       <div>
 
         <p
-        class="cart__total"
+        class="cart__total-price"
         [innerHTML]="getPriceFormated( totalPrice | currency: 'BRL' )"></p>
 
         <p
-        class="cart__total--installments"
+        class="cart__total-price--installments"
         [innerHTML]="getInstallments( totalPrice / installmentTimes | currency: 'BRL' )"></p>
 
       </div>

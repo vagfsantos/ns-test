@@ -1,4 +1,3 @@
-import { element } from 'protractor';
 import { Component } from '@angular/core';
 
 @Component({
@@ -10,8 +9,18 @@ export class AppComponent {
   productsInCart = [];
   totalPrice: number = 0;
 
-  addProductToCart(product) {
-    this.productsInCart.push(product);
+  addProductToCart(data) {
+    let isNewItem = true;
+
+    this.productsInCart = this.productsInCart.map( dataIncart => {
+      if( dataIncart.product.id === data.product.id ) {
+        dataIncart.quantity += data.quantity;
+        isNewItem = false;
+      }
+      return dataIncart;
+    });
+
+    if( isNewItem ) this.productsInCart.push(data);
     this.calcTotalPrice();
   }
 

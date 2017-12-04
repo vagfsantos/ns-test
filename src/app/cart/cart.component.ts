@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { CustomPriceService } from '../custom-price.service';
 
 @Component({
@@ -9,6 +9,7 @@ import { CustomPriceService } from '../custom-price.service';
 export class CartComponent implements OnInit {
   @Input() productsInCart;
   @Input() totalPrice: number;
+  @Output() onProductDeleted = new EventEmitter();
   private installmentTimes: number = 10;
   private cartIsOpen = false;
 
@@ -31,5 +32,9 @@ export class CartComponent implements OnInit {
   triggerCart(e) {
     e.preventDefault();
     this.cartIsOpen = !this.cartIsOpen;
+  }
+
+  deleteProduct(e) {
+    this.onProductDeleted.emit(e);
   }
 }

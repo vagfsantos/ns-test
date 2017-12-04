@@ -10,7 +10,7 @@
   </figure>
 
   <div>
-    <button class="cart-product__delete">delete</button>
+    <button class="cart-product__delete" (click)="deleteProduct($event)">delete</button>
     <p class="cart-product__price" [innerHTML]="getPriceFormated(productData.product.price | currency: productData.product.currencyId)"></p>
   </div>
 

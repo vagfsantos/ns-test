@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CustomPriceService } from '../../custom-price.service';
 
 @Component({
@@ -8,14 +8,23 @@ import { CustomPriceService } from '../../custom-price.service';
 })
 export class CartProductComponent implements OnInit {
   @Input() productData;
+  @Output() onProductDeleted = new EventEmitter();
 
   constructor( private customPriceService: CustomPriceService) { }
 
   ngOnInit() {
-    console.log(this.productData)
+
   }
 
   getPriceFormated(price) {
     return this.customPriceService.getPriceFormated(price);
+  }
+
+  deleteProduct(e) {
+    e.preventDefault();
+    this.onProductDeleted.emit({
+      id: this.productData.product.id,
+      size: this.productData.size
+    })
   }
 }

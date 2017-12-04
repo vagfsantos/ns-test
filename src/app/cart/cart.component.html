@@ -13,7 +13,7 @@
 
   <main>
     <div *ngFor="let product of productsInCart">
-      <app-cart-product [productData]="product"></app-cart-product>
+      <app-cart-product [productData]="product" (onProductDeleted)="deleteProduct($event)"></app-cart-product>
     </div>
     <div *ngIf="!productsInCart.length">
       <p class="cart__empty">Seu carrinho está vazio =(</p>

@@ -24,6 +24,14 @@ export class AppComponent {
     this.calcTotalPrice();
   }
 
+  deleteProduct(data) {
+    this.productsInCart = this.productsInCart.filter( productData => {
+      if( productData.size !== data.size && productData.product.id !== data.id ) {
+        return true;
+      }
+    });
+  }
+
   calcTotalPrice(){
     this.totalPrice = this.productsInCart.reduce( (prev, prod) => {
       return prev += prod.product.price * prod.quantity;

@@ -1,7 +1,11 @@
 <div class="app">
   <div class="app__container">
-    <app-shelf-list (onProductInCart)="addProductToCart($event)"></app-shelf-list>
-    <app-cart [productsInCart]="productsInCart" [totalPrice]="totalPrice"></app-cart>
+    <app-shelf-list
+      (onProductInCart)="addProductToCart($event)"></app-shelf-list>
+    <app-cart
+      [productsInCart]="productsInCart"
+      [totalPrice]="totalPrice"
+      (onProductDeleted)="deleteProduct($event)"></app-cart>
   </div>
 </div>
 

@@ -3,12 +3,33 @@
   height: 100%;
   max-width: 515px;
   position: fixed;
-  right: 0;
   top: 0;
   background: #202025;
   color: #fff;
   overflow-y: auto;
   overflow-x: hidden;
+  right: -100%;
+  opacity: 0;
+  visibility: hidden;
+
+  transition: .4s ease-in-out;
+
+  &--open{
+    right: 0;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__overlay{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.2);
+    z-index: -1;
+    cursor: pointer;
+  }
 
   &__empty{
     font-size: 1.8rem;

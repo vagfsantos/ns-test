@@ -1,4 +1,12 @@
-<div class="cart">
+<button
+  type="button"
+  class="cart-trigger"
+  (click)="triggerCart($event)">Minha Sacola</button>
+
+<div class="cart" [ngClass]="{'cart--open': cartIsOpen}">
+  <div
+  class="cart__overlay"
+  (click)="triggerCart($event)"></div>
   <header>
     <p><span>{{ productsInCart.length }}</span>Sacola</p>
   </header>

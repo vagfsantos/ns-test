@@ -10,6 +10,7 @@ export class CartComponent implements OnInit {
   @Input() productsInCart;
   @Input() totalPrice: number;
   private installmentTimes: number = 10;
+  private cartIsOpen = false;
 
   constructor(private customPriceService:CustomPriceService) {
 
@@ -25,5 +26,10 @@ export class CartComponent implements OnInit {
 
   getInstallments(price) {
     return this.customPriceService.getInstallments(price, this.installmentTimes);
+  }
+
+  triggerCart(e) {
+    e.preventDefault();
+    this.cartIsOpen = !this.cartIsOpen;
   }
 }

@@ -1,3 +1,17 @@
-<p>
-  cart-product works!
-</p>
+<div class="cart-product">
+
+  <figure class="cart-product__picture">
+    <img src="/assets/images/product-image-{{productData.product.id}}.jpg" alt="{{productData.product.title}}">
+    <figcaption class="cart-product__info">
+      <p class="cart-product__name">{{ productData.product.title }}</p>
+      <p class="cart-product__style">{{ productData.product.style }}</p>
+      <p class="cart-product__quantity">Quantidade: {{ productData.quantity }}</p>
+    </figcaption>
+  </figure>
+
+  <div>
+    <button class="cart-product__delete">delete</button>
+    <p class="cart-product__price" [innerHTML]="getPriceFormated(productData.product.price | currency: productData.product.currencyId)"></p>
+  </div>
+
+</div>

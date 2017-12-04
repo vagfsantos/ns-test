@@ -9,7 +9,7 @@ export class CustomPriceService {
     let finalPrice;
     let BRPrice = price.replace(/\,/gim, '#').replace(/\./gim, ',').replace(/\#/gim, '.');
 
-    finalPrice = BRPrice.replace(/R\$/, '<span>R$</span>').replace(/\,.+/, (s)=> `<span>${s}</span>`);
+    finalPrice = BRPrice.replace(/R\$/, '<span>R$ </span>').replace(/\,.+/, (s)=> `<span>${s}</span>`);
 
     return finalPrice;
   }

@@ -2,7 +2,8 @@ body{
     font-family: 'Open Sans', sans-serif;
     margin: 2em 0;
 
-  .shelf__price--full{
+  .shelf__price--full,
+  .cart-product__price{
     span{
       font-size: .8rem;
       font-weight: 500;

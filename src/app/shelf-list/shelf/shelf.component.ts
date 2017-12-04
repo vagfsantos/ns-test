@@ -12,6 +12,7 @@ export class ShelfComponent implements OnInit {
   @Output() onProductInCart = new EventEmitter();
 
   private quantityInput: number = 1;
+  private sizeInput: string;
 
   constructor(private customPriceService: CustomPriceService) { }
 
@@ -28,9 +29,15 @@ export class ShelfComponent implements OnInit {
   }
 
   addProductToCart(e) {
+    if( !this.sizeInput ) {
+      window.alert('Selecione uma variação de tamanho');
+      return;
+    }
+
     this.onProductInCart.emit({
       product: this.productInfo,
-      quantity: this.quantityInput
+      quantity: this.quantityInput,
+      size: this.sizeInput
     })
   }
 }

@@ -20,6 +20,13 @@
 
   </div>
 
+  <div class="shelf__sku" *ngFor="let size of productInfo.availableSizes">
+    <label>
+      <input type="radio" name="size" ng-control="options" [(ngModel)]="sizeInput" value="size">
+      <span>{{size}}</span>
+    </label>
+  </div>
+
   <div class="shelf__buy">
     <input type="number" min="1" [(ngModel)]="quantityInput">
     <button type="button" (click)="addProductToCart($event)">adicionar à sacola</button>

@@ -13,7 +13,7 @@ export class AppComponent {
     let isNewItem = true;
 
     this.productsInCart = this.productsInCart.map( dataIncart => {
-      if( dataIncart.product.id === data.product.id ) {
+      if( dataIncart.product.id === data.product.id && dataIncart.size === data.size ) {
         dataIncart.quantity += data.quantity;
         isNewItem = false;
       }

@@ -40,4 +40,8 @@ export class ShelfComponent implements OnInit {
       size: this.sizeInput
     })
   }
+
+  setSize(e) {
+    this.sizeInput = e.target.value;
+  }
 }

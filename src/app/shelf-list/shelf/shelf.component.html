@@ -20,9 +20,9 @@
 
   </div>
 
-  <div class="shelf__sku" *ngFor="let size of productInfo.availableSizes">
-    <label>
-      <input type="radio" name="size" ng-control="options" [(ngModel)]="sizeInput" value="size">
+  <div class="shelf__sku">
+    <label *ngFor="let size of productInfo.availableSizes">
+      <input type="radio" name="size" ng-control="options" [value]="size" (change)="setSize($event)">
       <span>{{size}}</span>
     </label>
   </div>

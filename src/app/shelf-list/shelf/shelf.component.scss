@@ -43,6 +43,24 @@ $color-support: #dfbd00;
     }
   }
 
+  &__sku{
+    margin: .5rem 0;
+    label{
+      cursor: pointer;
+    }
+    input{
+      display: none;
+
+      &:checked + span{
+        font-weight: 700;
+      }
+    }
+
+    span{
+      margin: 0 .5rem;
+    }
+  }
+
   &__buy{
     input{
       max-width: 2.5rem;

@@ -26,10 +26,12 @@ export class AppComponent {
 
   deleteProduct(data) {
     this.productsInCart = this.productsInCart.filter( productData => {
-      if( productData.size !== data.size && productData.product.id !== data.id ) {
+      if( productData.size !== data.size || productData.product.id !== data.id ) {
         return true;
       }
     });
+
+    this.calcTotalPrice();
   }
 
   calcTotalPrice(){

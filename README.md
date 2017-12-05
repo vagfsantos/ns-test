@@ -1,5 +1,9 @@
 # NsTest
 
+See it running online https://vagfsantos.github.io/ns-test/
+
+## Installing
+
 Download the project, then run `npm install` at the root folder
 
 ## Running the server

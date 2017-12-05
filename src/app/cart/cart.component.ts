@@ -9,9 +9,10 @@ import { CustomPriceService } from '../custom-price.service';
 export class CartComponent implements OnInit {
   @Input() productsInCart;
   @Input() totalPrice: number;
+  @Input() cartIsOpen = false;
+
   @Output() onProductDeleted = new EventEmitter();
   private installmentTimes: number = 10;
-  private cartIsOpen = false;
 
   constructor(private customPriceService:CustomPriceService) {
 

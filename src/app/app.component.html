@@ -4,6 +4,7 @@
       (onProductInCart)="addProductToCart($event)"></app-shelf-list>
     <app-cart
       [productsInCart]="productsInCart"
+      [cartIsOpen]="productsInCart ? productsInCart.length : false"
       [totalPrice]="totalPrice"
       (onProductDeleted)="deleteProduct($event)"></app-cart>
   </div>

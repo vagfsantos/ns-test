@@ -14,6 +14,20 @@
 
   transition: .4s ease-in-out;
 
+  &__trigger{
+    position: fixed;
+    right: 2rem;
+    top: 2rem;
+    background-color: #dfbd00;
+    color: #000000;
+    text-transform: uppercase;
+    border: 0;
+    font-size: .8rem;
+    padding: .5rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
   &--open{
     right: 0;
     opacity: 1;

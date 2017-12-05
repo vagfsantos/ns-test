@@ -7,6 +7,7 @@ import { CartModule } from './cart/cart.module';
 
 import { AppComponent } from './app.component';
 import { CustomPriceService } from './custom-price.service';
+import { OfflineCartService } from './offline-cart.service';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { CustomPriceService } from './custom-price.service';
     CartModule
   ],
   providers: [
-    CustomPriceService
+    CustomPriceService,
+    OfflineCartService
   ],
   bootstrap: [AppComponent]
 })

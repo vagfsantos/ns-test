@@ -10,6 +10,11 @@
       width: 33%;
       float: left;
 
+      @media (max-width: 768px) {
+        width: 100%;
+        font: none;
+      }
+
       &:nth-child(3n+4){
         clear: both;
       }

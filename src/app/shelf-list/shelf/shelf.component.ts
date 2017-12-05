@@ -11,8 +11,8 @@ export class ShelfComponent implements OnInit {
   @Input() productInfo: any;
   @Output() onProductInCart = new EventEmitter();
 
-  private quantityInput: number = 1;
-  private sizeInput: string;
+  quantityInput: number = 1;
+  sizeInput: string;
 
   constructor(private customPriceService: CustomPriceService) { }
 
